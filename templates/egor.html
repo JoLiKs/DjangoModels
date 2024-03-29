@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<style>
+    #ball {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        background-color: red;
+        color: green;
+        font-size: 30px;
+    }
+</style>
+<input id="inp1">
+<button>Кнопка</button>
+<h1 id="h1"></h1>
+</body>
+<script>
+
+    document.getElementsByTagName('button')[0].onclick = () => {
+        console.log('click')
+        if (inp1.value.toString().includes('param ')) {
+            console.log('условие сработало!')
+            let num = parseInt(inp1.value.toString()[inp1.value.toString().length-1])
+            h1.innerHTML = document.location
+                .toString()
+                .split('?')[1]
+                .split('&')[num]
+        }
+    }
+
+</script>
+</html>
